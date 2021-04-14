@@ -2,6 +2,62 @@
   "contractName": "coinCaller",
   "abi": [
     {
+      "constant": true,
+      "inputs": [],
+      "name": "numTransfers",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "transfers",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "coinContract",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
+        },
+        {
+          "internalType": "address",
+          "name": "recipient",
+          "type": "address"
+        },
+        {
+          "internalType": "bool",
+          "name": "successful",
+          "type": "bool"
+        },
+        {
+          "internalType": "uint256",
+          "name": "balance",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
       "constant": false,
       "inputs": [
         {
@@ -27,12 +83,12 @@
       "type": "function"
     }
   ],
-  "metadata": "{\"compiler\":{\"version\":\"0.5.16+commit.9c3226ce\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"coinContractAddress\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"receiver\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"sendCoin\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/Users/kylescott/src/simple_interactions/contracts/coinCaller.sol\":\"coinCaller\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/kylescott/src/simple_interactions/contracts/coinCaller.sol\":{\"keccak256\":\"0x171b42ef0a7cf3856b8e54ffd760c848e5bf99638144a83ec980680de5f67c8d\",\"urls\":[\"bzz-raw://e46e36af8b4e06dbab42ccf6d77b3fb1226a43430855bc6f0284b21d58b07a08\",\"dweb:/ipfs/QmVZfx6aWwGfy3zeGjYJxEQ4LNUK2Q9GSsv8vcEacrQW5W\"]},\"/Users/kylescott/src/simple_interactions/contracts/interfaces/IMetacoin.sol\":{\"keccak256\":\"0x1a7e03a25e936c26637f1e58c84ce9c96d6c2c2a12ca185562a4f13c7368429c\",\"urls\":[\"bzz-raw://e90225e1d22b66a0726e97a991b2ee02f37bdacfecc326039bfb6215d061b2c8\",\"dweb:/ipfs/Qmf1WtL2B7yxkzmHN5AYUUsFMjEU9UrzUJYxrkfUnK5ZxL\"]}},\"version\":1}",
-  "bytecode": "0x608060405234801561001057600080fd5b50610379806100206000396000f3fe608060405234801561001057600080fd5b506004361061002b5760003560e01c80630b40bd8814610030575b600080fd5b61009c6004803603606081101561004657600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190803573ffffffffffffffffffffffffffffffffffffffff1690602001909291908035906020019092919050505061009e565b005b600080600060015481526020019081526020016000209050838160000160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550818160010181905550828160020160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055508060000160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1663412664ae84846040518363ffffffff1660e01b8152600401808373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200182815260200192505050602060405180830381600087803b1580156101f057600080fd5b505af1158015610204573d6000803e3d6000fd5b505050506040513d602081101561021a57600080fd5b81019080805190602001909291905050508160020160146101000a81548160ff0219169083151502179055508060000160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166327e235e3306040518263ffffffff1660e01b8152600401808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001915050602060405180830381600087803b1580156102e957600080fd5b505af11580156102fd573d6000803e3d6000fd5b505050506040513d602081101561031357600080fd5b810190808051906020019092919050505081600301819055506001600081548092919060010191905055505050505056fea265627a7a7231582090f06d6a9220a2beda875fc6c9e44a07c22e6fb5eef72411514368d857a7b61064736f6c63430005100032",
-  "deployedBytecode": "0x608060405234801561001057600080fd5b506004361061002b5760003560e01c80630b40bd8814610030575b600080fd5b61009c6004803603606081101561004657600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190803573ffffffffffffffffffffffffffffffffffffffff1690602001909291908035906020019092919050505061009e565b005b600080600060015481526020019081526020016000209050838160000160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550818160010181905550828160020160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055508060000160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1663412664ae84846040518363ffffffff1660e01b8152600401808373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200182815260200192505050602060405180830381600087803b1580156101f057600080fd5b505af1158015610204573d6000803e3d6000fd5b505050506040513d602081101561021a57600080fd5b81019080805190602001909291905050508160020160146101000a81548160ff0219169083151502179055508060000160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166327e235e3306040518263ffffffff1660e01b8152600401808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001915050602060405180830381600087803b1580156102e957600080fd5b505af11580156102fd573d6000803e3d6000fd5b505050506040513d602081101561031357600080fd5b810190808051906020019092919050505081600301819055506001600081548092919060010191905055505050505056fea265627a7a7231582090f06d6a9220a2beda875fc6c9e44a07c22e6fb5eef72411514368d857a7b61064736f6c63430005100032",
-  "sourceMap": "104:608:2:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;104:608:2;;;;;;;",
-  "deployedSourceMap": "104:608:2:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;104:608:2;;;;;;;;;;;;;;;;;;;307:403;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;307:403:2;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;396:18;417:9;:23;427:12;;417:23;;;;;;;;;;;396:44;;485:19;468:1;:14;;;:36;;;;;;;;;;;;;;;;;;519:6;508:1;:8;;:17;;;;543:8;529:1;:11;;;:22;;;;;;;;;;;;;;;;;;580:1;:14;;;;;;;;;;;;570:35;;;606:8;616:6;570:53;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;570:53:2;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;570:53:2;;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;570:53:2;;;;;;;;;;;;;;;;555:1;:12;;;:68;;;;;;;;;;;;;;;;;;649:1;:14;;;;;;;;;;;;639:34;;;682:4;639:49;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;639:49:2;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;639:49:2;;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;639:49:2;;;;;;;;;;;;;;;;627:1;:9;;:61;;;;692:12;;:14;;;;;;;;;;;;;307:403;;;;:::o",
-  "source": "// SPDX-License-Identifier: MIT\npragma solidity >=0.4.22 <0.8.0;\n\nimport './interfaces/IMetacoin.sol';\n\ncontract coinCaller {\n\tstruct transfer{\n\t\taddress coinContract;\n\t\tuint amount;\n\t\taddress recipient;\n\t\tbool successful;\n\t\tuint balance;\n\t}\n\n\tmapping(uint => transfer) transfers;\n\tuint numTransfers;\n    \n\tfunction sendCoin(address coinContractAddress, address receiver, uint amount) public {\n\t\ttransfer storage t = transfers[numTransfers]; //Creates a reference t\n\t\tt.coinContract = coinContractAddress;\n\t\tt.amount = amount;\n\t\tt.recipient = receiver;\n\t\tt.successful = IMetacoin(t.coinContract).sendToken(receiver, amount);\n\t\tt.balance = IMetacoin(t.coinContract).balances(address(this));\n\t\tnumTransfers++;\n\t}\n}",
+  "metadata": "{\"compiler\":{\"version\":\"0.5.16+commit.9c3226ce\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":true,\"inputs\":[],\"name\":\"numTransfers\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"coinContractAddress\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"receiver\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"sendCoin\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"transfers\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"coinContract\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"recipient\",\"type\":\"address\"},{\"internalType\":\"bool\",\"name\":\"successful\",\"type\":\"bool\"},{\"internalType\":\"uint256\",\"name\":\"balance\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/Users/kylescott/src/simple_interactions/contracts/coinCaller.sol\":\"coinCaller\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/kylescott/src/simple_interactions/contracts/coinCaller.sol\":{\"keccak256\":\"0x15a5c8efed8474e585f13771e957ad1e2ab0b7c6def9cfc0eb693f3f5db85e10\",\"urls\":[\"bzz-raw://f2da33134731e9321130d3c1e4a995ec97b3f415baa168c04b39b8cf5665e5fd\",\"dweb:/ipfs/QmbsU5ubgCvYDVxAQq6vDmVrrehEjCTCc48V6oxtawe8QD\"]},\"/Users/kylescott/src/simple_interactions/contracts/interfaces/IMetacoin.sol\":{\"keccak256\":\"0x1a7e03a25e936c26637f1e58c84ce9c96d6c2c2a12ca185562a4f13c7368429c\",\"urls\":[\"bzz-raw://e90225e1d22b66a0726e97a991b2ee02f37bdacfecc326039bfb6215d061b2c8\",\"dweb:/ipfs/Qmf1WtL2B7yxkzmHN5AYUUsFMjEU9UrzUJYxrkfUnK5ZxL\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b506104f0806100206000396000f3fe608060405234801561001057600080fd5b50600436106100415760003560e01c80630b40bd88146100465780639377d711146100b4578063a39a8dbd1461016e575b600080fd5b6100b26004803603606081101561005c57600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190803573ffffffffffffffffffffffffffffffffffffffff1690602001909291908035906020019092919050505061018c565b005b6100e0600480360360208110156100ca57600080fd5b8101908080359060200190929190505050610432565b604051808673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018581526020018473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001831515151581526020018281526020019550505050505060405180910390f35b6101766104b5565b6040518082815260200191505060405180910390f35b600080600060015481526020019081526020016000209050838160000160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550818160010181905550828160020160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055508060000160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1663412664ae84846040518363ffffffff1660e01b8152600401808373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200182815260200192505050602060405180830381600087803b1580156102de57600080fd5b505af11580156102f2573d6000803e3d6000fd5b505050506040513d602081101561030857600080fd5b81019080805190602001909291905050508160020160146101000a81548160ff0219169083151502179055508060000160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166327e235e3306040518263ffffffff1660e01b8152600401808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001915050602060405180830381600087803b1580156103d757600080fd5b505af11580156103eb573d6000803e3d6000fd5b505050506040513d602081101561040157600080fd5b8101908080519060200190929190505050816003018190555060016000815480929190600101919050555050505050565b60006020528060005260406000206000915090508060000160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16908060010154908060020160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16908060020160149054906101000a900460ff16908060030154905085565b6001548156fea265627a7a72315820b7cb4b3ef2552a87b9c947b5e3284f0dd77d2751852c5194bf52158c264ff8e664736f6c63430005100032",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100415760003560e01c80630b40bd88146100465780639377d711146100b4578063a39a8dbd1461016e575b600080fd5b6100b26004803603606081101561005c57600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190803573ffffffffffffffffffffffffffffffffffffffff1690602001909291908035906020019092919050505061018c565b005b6100e0600480360360208110156100ca57600080fd5b8101908080359060200190929190505050610432565b604051808673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018581526020018473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001831515151581526020018281526020019550505050505060405180910390f35b6101766104b5565b6040518082815260200191505060405180910390f35b600080600060015481526020019081526020016000209050838160000160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550818160010181905550828160020160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055508060000160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1663412664ae84846040518363ffffffff1660e01b8152600401808373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200182815260200192505050602060405180830381600087803b1580156102de57600080fd5b505af11580156102f2573d6000803e3d6000fd5b505050506040513d602081101561030857600080fd5b81019080805190602001909291905050508160020160146101000a81548160ff0219169083151502179055508060000160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166327e235e3306040518263ffffffff1660e01b8152600401808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001915050602060405180830381600087803b1580156103d757600080fd5b505af11580156103eb573d6000803e3d6000fd5b505050506040513d602081101561040157600080fd5b8101908080519060200190929190505050816003018190555060016000815480929190600101919050555050505050565b60006020528060005260406000206000915090508060000160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16908060010154908060020160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16908060020160149054906101000a900460ff16908060030154905085565b6001548156fea265627a7a72315820b7cb4b3ef2552a87b9c947b5e3284f0dd77d2751852c5194bf52158c264ff8e664736f6c63430005100032",
+  "sourceMap": "104:618:2:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;104:618:2;;;;;;;",
+  "deployedSourceMap": "104:618:2:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;104:618:2;;;;;;;;;;;;;;;;;;;;;;;;;;;;;317:403;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;317:403:2;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;244:42;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;244:42:2;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;289:24;;;:::i;:::-;;;;;;;;;;;;;;;;;;;317:403;406:18;427:9;:23;437:12;;427:23;;;;;;;;;;;406:44;;495:19;478:1;:14;;;:36;;;;;;;;;;;;;;;;;;529:6;518:1;:8;;:17;;;;553:8;539:1;:11;;;:22;;;;;;;;;;;;;;;;;;590:1;:14;;;;;;;;;;;;580:35;;;616:8;626:6;580:53;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;580:53:2;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;580:53:2;;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;580:53:2;;;;;;;;;;;;;;;;565:1;:12;;;:68;;;;;;;;;;;;;;;;;;659:1;:14;;;;;;;;;;;;649:34;;;692:4;649:49;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;649:49:2;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;649:49:2;;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;649:49:2;;;;;;;;;;;;;;;;637:1;:9;;:61;;;;702:12;;:14;;;;;;;;;;;;;317:403;;;;:::o;244:42::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;289:24::-;;;;:::o",
+  "source": "// SPDX-License-Identifier: MIT\npragma solidity >=0.4.22 <0.8.0;\n\nimport './interfaces/IMetacoin.sol';\n\ncontract coinCaller {\n\tstruct transfer{\n\t\taddress coinContract;\n\t\tuint amount;\n\t\taddress recipient;\n\t\tbool successful;\n\t\tuint balance;\n\t}\n\n\tmapping(uint => transfer) public transfers;\n\tuint public numTransfers;\n\n\tfunction sendCoin(address coinContractAddress, address receiver, uint amount) public {\n\t\ttransfer storage t = transfers[numTransfers]; //Creates a reference t\n\t\tt.coinContract = coinContractAddress;\n\t\tt.amount = amount;\n\t\tt.recipient = receiver;\n\t\tt.successful = IMetacoin(t.coinContract).sendToken(receiver, amount);\n\t\tt.balance = IMetacoin(t.coinContract).balances(address(this));\n\t\tnumTransfers++;\n\t}\n}",
   "sourcePath": "/Users/kylescott/src/simple_interactions/contracts/coinCaller.sol",
   "ast": {
     "absolutePath": "/Users/kylescott/src/simple_interactions/contracts/coinCaller.sol",
@@ -231,7 +287,7 @@
             "name": "transfers",
             "nodeType": "VariableDeclaration",
             "scope": 174,
-            "src": "244:35:2",
+            "src": "244:42:2",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -270,7 +326,7 @@
               }
             },
             "value": null,
-            "visibility": "internal"
+            "visibility": "public"
           },
           {
             "constant": false,
@@ -278,7 +334,7 @@
             "name": "numTransfers",
             "nodeType": "VariableDeclaration",
             "scope": 174,
-            "src": "282:17:2",
+            "src": "289:24:2",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -289,20 +345,20 @@
               "id": 108,
               "name": "uint",
               "nodeType": "ElementaryTypeName",
-              "src": "282:4:2",
+              "src": "289:4:2",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
               }
             },
             "value": null,
-            "visibility": "internal"
+            "visibility": "public"
           },
           {
             "body": {
               "id": 172,
               "nodeType": "Block",
-              "src": "392:318:2",
+              "src": "402:318:2",
               "statements": [
                 {
                   "assignments": [
@@ -315,7 +371,7 @@
                       "name": "t",
                       "nodeType": "VariableDeclaration",
                       "scope": 172,
-                      "src": "396:18:2",
+                      "src": "406:18:2",
                       "stateVariable": false,
                       "storageLocation": "storage",
                       "typeDescriptions": {
@@ -328,7 +384,7 @@
                         "name": "transfer",
                         "nodeType": "UserDefinedTypeName",
                         "referencedDeclaration": 103,
-                        "src": "396:8:2",
+                        "src": "406:8:2",
                         "typeDescriptions": {
                           "typeIdentifier": "t_struct$_transfer_$103_storage_ptr",
                           "typeString": "struct coinCaller.transfer"
@@ -348,7 +404,7 @@
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
                       "referencedDeclaration": 107,
-                      "src": "417:9:2",
+                      "src": "427:9:2",
                       "typeDescriptions": {
                         "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_transfer_$103_storage_$",
                         "typeString": "mapping(uint256 => struct coinCaller.transfer storage ref)"
@@ -362,7 +418,7 @@
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
                       "referencedDeclaration": 109,
-                      "src": "427:12:2",
+                      "src": "437:12:2",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
@@ -373,14 +429,14 @@
                     "isPure": false,
                     "lValueRequested": false,
                     "nodeType": "IndexAccess",
-                    "src": "417:23:2",
+                    "src": "427:23:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_struct$_transfer_$103_storage",
                       "typeString": "struct coinCaller.transfer storage ref"
                     }
                   },
                   "nodeType": "VariableDeclarationStatement",
-                  "src": "396:44:2"
+                  "src": "406:44:2"
                 },
                 {
                   "expression": {
@@ -399,7 +455,7 @@
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
                         "referencedDeclaration": 119,
-                        "src": "468:1:2",
+                        "src": "478:1:2",
                         "typeDescriptions": {
                           "typeIdentifier": "t_struct$_transfer_$103_storage_ptr",
                           "typeString": "struct coinCaller.transfer storage pointer"
@@ -413,7 +469,7 @@
                       "memberName": "coinContract",
                       "nodeType": "MemberAccess",
                       "referencedDeclaration": 94,
-                      "src": "468:14:2",
+                      "src": "478:14:2",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
                         "typeString": "address"
@@ -428,13 +484,13 @@
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
                       "referencedDeclaration": 111,
-                      "src": "485:19:2",
+                      "src": "495:19:2",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
                         "typeString": "address"
                       }
                     },
-                    "src": "468:36:2",
+                    "src": "478:36:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -442,7 +498,7 @@
                   },
                   "id": 129,
                   "nodeType": "ExpressionStatement",
-                  "src": "468:36:2"
+                  "src": "478:36:2"
                 },
                 {
                   "expression": {
@@ -461,7 +517,7 @@
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
                         "referencedDeclaration": 119,
-                        "src": "508:1:2",
+                        "src": "518:1:2",
                         "typeDescriptions": {
                           "typeIdentifier": "t_struct$_transfer_$103_storage_ptr",
                           "typeString": "struct coinCaller.transfer storage pointer"
@@ -475,7 +531,7 @@
                       "memberName": "amount",
                       "nodeType": "MemberAccess",
                       "referencedDeclaration": 96,
-                      "src": "508:8:2",
+                      "src": "518:8:2",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
@@ -490,13 +546,13 @@
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
                       "referencedDeclaration": 115,
-                      "src": "519:6:2",
+                      "src": "529:6:2",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
                       }
                     },
-                    "src": "508:17:2",
+                    "src": "518:17:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -504,7 +560,7 @@
                   },
                   "id": 135,
                   "nodeType": "ExpressionStatement",
-                  "src": "508:17:2"
+                  "src": "518:17:2"
                 },
                 {
                   "expression": {
@@ -523,7 +579,7 @@
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
                         "referencedDeclaration": 119,
-                        "src": "529:1:2",
+                        "src": "539:1:2",
                         "typeDescriptions": {
                           "typeIdentifier": "t_struct$_transfer_$103_storage_ptr",
                           "typeString": "struct coinCaller.transfer storage pointer"
@@ -537,7 +593,7 @@
                       "memberName": "recipient",
                       "nodeType": "MemberAccess",
                       "referencedDeclaration": 98,
-                      "src": "529:11:2",
+                      "src": "539:11:2",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
                         "typeString": "address"
@@ -552,13 +608,13 @@
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
                       "referencedDeclaration": 113,
-                      "src": "543:8:2",
+                      "src": "553:8:2",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
                         "typeString": "address"
                       }
                     },
-                    "src": "529:22:2",
+                    "src": "539:22:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -566,7 +622,7 @@
                   },
                   "id": 141,
                   "nodeType": "ExpressionStatement",
-                  "src": "529:22:2"
+                  "src": "539:22:2"
                 },
                 {
                   "expression": {
@@ -585,7 +641,7 @@
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
                         "referencedDeclaration": 119,
-                        "src": "555:1:2",
+                        "src": "565:1:2",
                         "typeDescriptions": {
                           "typeIdentifier": "t_struct$_transfer_$103_storage_ptr",
                           "typeString": "struct coinCaller.transfer storage pointer"
@@ -599,7 +655,7 @@
                       "memberName": "successful",
                       "nodeType": "MemberAccess",
                       "referencedDeclaration": 100,
-                      "src": "555:12:2",
+                      "src": "565:12:2",
                       "typeDescriptions": {
                         "typeIdentifier": "t_bool",
                         "typeString": "bool"
@@ -617,7 +673,7 @@
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
                           "referencedDeclaration": 113,
-                          "src": "606:8:2",
+                          "src": "616:8:2",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
                             "typeString": "address"
@@ -630,7 +686,7 @@
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
                           "referencedDeclaration": 115,
-                          "src": "616:6:2",
+                          "src": "626:6:2",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
@@ -660,7 +716,7 @@
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
                                 "referencedDeclaration": 119,
-                                "src": "580:1:2",
+                                "src": "590:1:2",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_struct$_transfer_$103_storage_ptr",
                                   "typeString": "struct coinCaller.transfer storage pointer"
@@ -674,7 +730,7 @@
                               "memberName": "coinContract",
                               "nodeType": "MemberAccess",
                               "referencedDeclaration": 94,
-                              "src": "580:14:2",
+                              "src": "590:14:2",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_address",
                                 "typeString": "address"
@@ -693,7 +749,7 @@
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
                             "referencedDeclaration": 227,
-                            "src": "570:9:2",
+                            "src": "580:9:2",
                             "typeDescriptions": {
                               "typeIdentifier": "t_type$_t_contract$_IMetacoin_$227_$",
                               "typeString": "type(contract IMetacoin)"
@@ -707,7 +763,7 @@
                           "lValueRequested": false,
                           "names": [],
                           "nodeType": "FunctionCall",
-                          "src": "570:25:2",
+                          "src": "580:25:2",
                           "typeDescriptions": {
                             "typeIdentifier": "t_contract$_IMetacoin_$227",
                             "typeString": "contract IMetacoin"
@@ -721,7 +777,7 @@
                         "memberName": "sendToken",
                         "nodeType": "MemberAccess",
                         "referencedDeclaration": 226,
-                        "src": "570:35:2",
+                        "src": "580:35:2",
                         "typeDescriptions": {
                           "typeIdentifier": "t_function_external_nonpayable$_t_address_$_t_uint256_$returns$_t_bool_$",
                           "typeString": "function (address,uint256) external returns (bool)"
@@ -735,13 +791,13 @@
                       "lValueRequested": false,
                       "names": [],
                       "nodeType": "FunctionCall",
-                      "src": "570:53:2",
+                      "src": "580:53:2",
                       "typeDescriptions": {
                         "typeIdentifier": "t_bool",
                         "typeString": "bool"
                       }
                     },
-                    "src": "555:68:2",
+                    "src": "565:68:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
@@ -749,7 +805,7 @@
                   },
                   "id": 154,
                   "nodeType": "ExpressionStatement",
-                  "src": "555:68:2"
+                  "src": "565:68:2"
                 },
                 {
                   "expression": {
@@ -768,7 +824,7 @@
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
                         "referencedDeclaration": 119,
-                        "src": "627:1:2",
+                        "src": "637:1:2",
                         "typeDescriptions": {
                           "typeIdentifier": "t_struct$_transfer_$103_storage_ptr",
                           "typeString": "struct coinCaller.transfer storage pointer"
@@ -782,7 +838,7 @@
                       "memberName": "balance",
                       "nodeType": "MemberAccess",
                       "referencedDeclaration": 102,
-                      "src": "627:9:2",
+                      "src": "637:9:2",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
@@ -803,7 +859,7 @@
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
                               "referencedDeclaration": 258,
-                              "src": "682:4:2",
+                              "src": "692:4:2",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_contract$_coinCaller_$174",
                                 "typeString": "contract coinCaller"
@@ -823,7 +879,7 @@
                             "isPure": true,
                             "lValueRequested": false,
                             "nodeType": "ElementaryTypeNameExpression",
-                            "src": "674:7:2",
+                            "src": "684:7:2",
                             "typeDescriptions": {
                               "typeIdentifier": "t_type$_t_address_$",
                               "typeString": "type(address)"
@@ -838,7 +894,7 @@
                           "lValueRequested": false,
                           "names": [],
                           "nodeType": "FunctionCall",
-                          "src": "674:13:2",
+                          "src": "684:13:2",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
                             "typeString": "address"
@@ -864,7 +920,7 @@
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
                                 "referencedDeclaration": 119,
-                                "src": "649:1:2",
+                                "src": "659:1:2",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_struct$_transfer_$103_storage_ptr",
                                   "typeString": "struct coinCaller.transfer storage pointer"
@@ -878,7 +934,7 @@
                               "memberName": "coinContract",
                               "nodeType": "MemberAccess",
                               "referencedDeclaration": 94,
-                              "src": "649:14:2",
+                              "src": "659:14:2",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_address",
                                 "typeString": "address"
@@ -897,7 +953,7 @@
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
                             "referencedDeclaration": 227,
-                            "src": "639:9:2",
+                            "src": "649:9:2",
                             "typeDescriptions": {
                               "typeIdentifier": "t_type$_t_contract$_IMetacoin_$227_$",
                               "typeString": "type(contract IMetacoin)"
@@ -911,7 +967,7 @@
                           "lValueRequested": false,
                           "names": [],
                           "nodeType": "FunctionCall",
-                          "src": "639:25:2",
+                          "src": "649:25:2",
                           "typeDescriptions": {
                             "typeIdentifier": "t_contract$_IMetacoin_$227",
                             "typeString": "contract IMetacoin"
@@ -925,7 +981,7 @@
                         "memberName": "balances",
                         "nodeType": "MemberAccess",
                         "referencedDeclaration": 217,
-                        "src": "639:34:2",
+                        "src": "649:34:2",
                         "typeDescriptions": {
                           "typeIdentifier": "t_function_external_nonpayable$_t_address_$returns$_t_uint256_$",
                           "typeString": "function (address) external returns (uint256)"
@@ -939,13 +995,13 @@
                       "lValueRequested": false,
                       "names": [],
                       "nodeType": "FunctionCall",
-                      "src": "639:49:2",
+                      "src": "649:49:2",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
                       }
                     },
-                    "src": "627:61:2",
+                    "src": "637:61:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -953,7 +1009,7 @@
                   },
                   "id": 168,
                   "nodeType": "ExpressionStatement",
-                  "src": "627:61:2"
+                  "src": "637:61:2"
                 },
                 {
                   "expression": {
@@ -966,7 +1022,7 @@
                     "nodeType": "UnaryOperation",
                     "operator": "++",
                     "prefix": false,
-                    "src": "692:14:2",
+                    "src": "702:14:2",
                     "subExpression": {
                       "argumentTypes": null,
                       "id": 169,
@@ -974,7 +1030,7 @@
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
                       "referencedDeclaration": 109,
-                      "src": "692:12:2",
+                      "src": "702:12:2",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
@@ -987,7 +1043,7 @@
                   },
                   "id": 171,
                   "nodeType": "ExpressionStatement",
-                  "src": "692:14:2"
+                  "src": "702:14:2"
                 }
               ]
             },
@@ -1008,7 +1064,7 @@
                   "name": "coinContractAddress",
                   "nodeType": "VariableDeclaration",
                   "scope": 173,
-                  "src": "325:27:2",
+                  "src": "335:27:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1019,7 +1075,7 @@
                     "id": 110,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "325:7:2",
+                    "src": "335:7:2",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -1035,7 +1091,7 @@
                   "name": "receiver",
                   "nodeType": "VariableDeclaration",
                   "scope": 173,
-                  "src": "354:16:2",
+                  "src": "364:16:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1046,7 +1102,7 @@
                     "id": 112,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "354:7:2",
+                    "src": "364:7:2",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -1062,7 +1118,7 @@
                   "name": "amount",
                   "nodeType": "VariableDeclaration",
                   "scope": 173,
-                  "src": "372:11:2",
+                  "src": "382:11:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1073,7 +1129,7 @@
                     "id": 114,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
-                    "src": "372:4:2",
+                    "src": "382:4:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -1083,26 +1139,26 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "324:60:2"
+              "src": "334:60:2"
             },
             "returnParameters": {
               "id": 117,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "392:0:2"
+              "src": "402:0:2"
             },
             "scope": 174,
-            "src": "307:403:2",
+            "src": "317:403:2",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "public"
           }
         ],
         "scope": 175,
-        "src": "104:608:2"
+        "src": "104:618:2"
       }
     ],
-    "src": "32:680:2"
+    "src": "32:690:2"
   },
   "legacyAST": {
     "absolutePath": "/Users/kylescott/src/simple_interactions/contracts/coinCaller.sol",
@@ -1301,7 +1357,7 @@
             "name": "transfers",
             "nodeType": "VariableDeclaration",
             "scope": 174,
-            "src": "244:35:2",
+            "src": "244:42:2",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -1340,7 +1396,7 @@
               }
             },
             "value": null,
-            "visibility": "internal"
+            "visibility": "public"
           },
           {
             "constant": false,
@@ -1348,7 +1404,7 @@
             "name": "numTransfers",
             "nodeType": "VariableDeclaration",
             "scope": 174,
-            "src": "282:17:2",
+            "src": "289:24:2",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -1359,20 +1415,20 @@
               "id": 108,
               "name": "uint",
               "nodeType": "ElementaryTypeName",
-              "src": "282:4:2",
+              "src": "289:4:2",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
               }
             },
             "value": null,
-            "visibility": "internal"
+            "visibility": "public"
           },
           {
             "body": {
               "id": 172,
               "nodeType": "Block",
-              "src": "392:318:2",
+              "src": "402:318:2",
               "statements": [
                 {
                   "assignments": [
@@ -1385,7 +1441,7 @@
                       "name": "t",
                       "nodeType": "VariableDeclaration",
                       "scope": 172,
-                      "src": "396:18:2",
+                      "src": "406:18:2",
                       "stateVariable": false,
                       "storageLocation": "storage",
                       "typeDescriptions": {
@@ -1398,7 +1454,7 @@
                         "name": "transfer",
                         "nodeType": "UserDefinedTypeName",
                         "referencedDeclaration": 103,
-                        "src": "396:8:2",
+                        "src": "406:8:2",
                         "typeDescriptions": {
                           "typeIdentifier": "t_struct$_transfer_$103_storage_ptr",
                           "typeString": "struct coinCaller.transfer"
@@ -1418,7 +1474,7 @@
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
                       "referencedDeclaration": 107,
-                      "src": "417:9:2",
+                      "src": "427:9:2",
                       "typeDescriptions": {
                         "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_transfer_$103_storage_$",
                         "typeString": "mapping(uint256 => struct coinCaller.transfer storage ref)"
@@ -1432,7 +1488,7 @@
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
                       "referencedDeclaration": 109,
-                      "src": "427:12:2",
+                      "src": "437:12:2",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
@@ -1443,14 +1499,14 @@
                     "isPure": false,
                     "lValueRequested": false,
                     "nodeType": "IndexAccess",
-                    "src": "417:23:2",
+                    "src": "427:23:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_struct$_transfer_$103_storage",
                       "typeString": "struct coinCaller.transfer storage ref"
                     }
                   },
                   "nodeType": "VariableDeclarationStatement",
-                  "src": "396:44:2"
+                  "src": "406:44:2"
                 },
                 {
                   "expression": {
@@ -1469,7 +1525,7 @@
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
                         "referencedDeclaration": 119,
-                        "src": "468:1:2",
+                        "src": "478:1:2",
                         "typeDescriptions": {
                           "typeIdentifier": "t_struct$_transfer_$103_storage_ptr",
                           "typeString": "struct coinCaller.transfer storage pointer"
@@ -1483,7 +1539,7 @@
                       "memberName": "coinContract",
                       "nodeType": "MemberAccess",
                       "referencedDeclaration": 94,
-                      "src": "468:14:2",
+                      "src": "478:14:2",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
                         "typeString": "address"
@@ -1498,13 +1554,13 @@
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
                       "referencedDeclaration": 111,
-                      "src": "485:19:2",
+                      "src": "495:19:2",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
                         "typeString": "address"
                       }
                     },
-                    "src": "468:36:2",
+                    "src": "478:36:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -1512,7 +1568,7 @@
                   },
                   "id": 129,
                   "nodeType": "ExpressionStatement",
-                  "src": "468:36:2"
+                  "src": "478:36:2"
                 },
                 {
                   "expression": {
@@ -1531,7 +1587,7 @@
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
                         "referencedDeclaration": 119,
-                        "src": "508:1:2",
+                        "src": "518:1:2",
                         "typeDescriptions": {
                           "typeIdentifier": "t_struct$_transfer_$103_storage_ptr",
                           "typeString": "struct coinCaller.transfer storage pointer"
@@ -1545,7 +1601,7 @@
                       "memberName": "amount",
                       "nodeType": "MemberAccess",
                       "referencedDeclaration": 96,
-                      "src": "508:8:2",
+                      "src": "518:8:2",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
@@ -1560,13 +1616,13 @@
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
                       "referencedDeclaration": 115,
-                      "src": "519:6:2",
+                      "src": "529:6:2",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
                       }
                     },
-                    "src": "508:17:2",
+                    "src": "518:17:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -1574,7 +1630,7 @@
                   },
                   "id": 135,
                   "nodeType": "ExpressionStatement",
-                  "src": "508:17:2"
+                  "src": "518:17:2"
                 },
                 {
                   "expression": {
@@ -1593,7 +1649,7 @@
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
                         "referencedDeclaration": 119,
-                        "src": "529:1:2",
+                        "src": "539:1:2",
                         "typeDescriptions": {
                           "typeIdentifier": "t_struct$_transfer_$103_storage_ptr",
                           "typeString": "struct coinCaller.transfer storage pointer"
@@ -1607,7 +1663,7 @@
                       "memberName": "recipient",
                       "nodeType": "MemberAccess",
                       "referencedDeclaration": 98,
-                      "src": "529:11:2",
+                      "src": "539:11:2",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
                         "typeString": "address"
@@ -1622,13 +1678,13 @@
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
                       "referencedDeclaration": 113,
-                      "src": "543:8:2",
+                      "src": "553:8:2",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
                         "typeString": "address"
                       }
                     },
-                    "src": "529:22:2",
+                    "src": "539:22:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -1636,7 +1692,7 @@
                   },
                   "id": 141,
                   "nodeType": "ExpressionStatement",
-                  "src": "529:22:2"
+                  "src": "539:22:2"
                 },
                 {
                   "expression": {
@@ -1655,7 +1711,7 @@
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
                         "referencedDeclaration": 119,
-                        "src": "555:1:2",
+                        "src": "565:1:2",
                         "typeDescriptions": {
                           "typeIdentifier": "t_struct$_transfer_$103_storage_ptr",
                           "typeString": "struct coinCaller.transfer storage pointer"
@@ -1669,7 +1725,7 @@
                       "memberName": "successful",
                       "nodeType": "MemberAccess",
                       "referencedDeclaration": 100,
-                      "src": "555:12:2",
+                      "src": "565:12:2",
                       "typeDescriptions": {
                         "typeIdentifier": "t_bool",
                         "typeString": "bool"
@@ -1687,7 +1743,7 @@
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
                           "referencedDeclaration": 113,
-                          "src": "606:8:2",
+                          "src": "616:8:2",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
                             "typeString": "address"
@@ -1700,7 +1756,7 @@
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
                           "referencedDeclaration": 115,
-                          "src": "616:6:2",
+                          "src": "626:6:2",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
@@ -1730,7 +1786,7 @@
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
                                 "referencedDeclaration": 119,
-                                "src": "580:1:2",
+                                "src": "590:1:2",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_struct$_transfer_$103_storage_ptr",
                                   "typeString": "struct coinCaller.transfer storage pointer"
@@ -1744,7 +1800,7 @@
                               "memberName": "coinContract",
                               "nodeType": "MemberAccess",
                               "referencedDeclaration": 94,
-                              "src": "580:14:2",
+                              "src": "590:14:2",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_address",
                                 "typeString": "address"
@@ -1763,7 +1819,7 @@
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
                             "referencedDeclaration": 227,
-                            "src": "570:9:2",
+                            "src": "580:9:2",
                             "typeDescriptions": {
                               "typeIdentifier": "t_type$_t_contract$_IMetacoin_$227_$",
                               "typeString": "type(contract IMetacoin)"
@@ -1777,7 +1833,7 @@
                           "lValueRequested": false,
                           "names": [],
                           "nodeType": "FunctionCall",
-                          "src": "570:25:2",
+                          "src": "580:25:2",
                           "typeDescriptions": {
                             "typeIdentifier": "t_contract$_IMetacoin_$227",
                             "typeString": "contract IMetacoin"
@@ -1791,7 +1847,7 @@
                         "memberName": "sendToken",
                         "nodeType": "MemberAccess",
                         "referencedDeclaration": 226,
-                        "src": "570:35:2",
+                        "src": "580:35:2",
                         "typeDescriptions": {
                           "typeIdentifier": "t_function_external_nonpayable$_t_address_$_t_uint256_$returns$_t_bool_$",
                           "typeString": "function (address,uint256) external returns (bool)"
@@ -1805,13 +1861,13 @@
                       "lValueRequested": false,
                       "names": [],
                       "nodeType": "FunctionCall",
-                      "src": "570:53:2",
+                      "src": "580:53:2",
                       "typeDescriptions": {
                         "typeIdentifier": "t_bool",
                         "typeString": "bool"
                       }
                     },
-                    "src": "555:68:2",
+                    "src": "565:68:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
@@ -1819,7 +1875,7 @@
                   },
                   "id": 154,
                   "nodeType": "ExpressionStatement",
-                  "src": "555:68:2"
+                  "src": "565:68:2"
                 },
                 {
                   "expression": {
@@ -1838,7 +1894,7 @@
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
                         "referencedDeclaration": 119,
-                        "src": "627:1:2",
+                        "src": "637:1:2",
                         "typeDescriptions": {
                           "typeIdentifier": "t_struct$_transfer_$103_storage_ptr",
                           "typeString": "struct coinCaller.transfer storage pointer"
@@ -1852,7 +1908,7 @@
                       "memberName": "balance",
                       "nodeType": "MemberAccess",
                       "referencedDeclaration": 102,
-                      "src": "627:9:2",
+                      "src": "637:9:2",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
@@ -1873,7 +1929,7 @@
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
                               "referencedDeclaration": 258,
-                              "src": "682:4:2",
+                              "src": "692:4:2",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_contract$_coinCaller_$174",
                                 "typeString": "contract coinCaller"
@@ -1893,7 +1949,7 @@
                             "isPure": true,
                             "lValueRequested": false,
                             "nodeType": "ElementaryTypeNameExpression",
-                            "src": "674:7:2",
+                            "src": "684:7:2",
                             "typeDescriptions": {
                               "typeIdentifier": "t_type$_t_address_$",
                               "typeString": "type(address)"
@@ -1908,7 +1964,7 @@
                           "lValueRequested": false,
                           "names": [],
                           "nodeType": "FunctionCall",
-                          "src": "674:13:2",
+                          "src": "684:13:2",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
                             "typeString": "address"
@@ -1934,7 +1990,7 @@
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
                                 "referencedDeclaration": 119,
-                                "src": "649:1:2",
+                                "src": "659:1:2",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_struct$_transfer_$103_storage_ptr",
                                   "typeString": "struct coinCaller.transfer storage pointer"
@@ -1948,7 +2004,7 @@
                               "memberName": "coinContract",
                               "nodeType": "MemberAccess",
                               "referencedDeclaration": 94,
-                              "src": "649:14:2",
+                              "src": "659:14:2",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_address",
                                 "typeString": "address"
@@ -1967,7 +2023,7 @@
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
                             "referencedDeclaration": 227,
-                            "src": "639:9:2",
+                            "src": "649:9:2",
                             "typeDescriptions": {
                               "typeIdentifier": "t_type$_t_contract$_IMetacoin_$227_$",
                               "typeString": "type(contract IMetacoin)"
@@ -1981,7 +2037,7 @@
                           "lValueRequested": false,
                           "names": [],
                           "nodeType": "FunctionCall",
-                          "src": "639:25:2",
+                          "src": "649:25:2",
                           "typeDescriptions": {
                             "typeIdentifier": "t_contract$_IMetacoin_$227",
                             "typeString": "contract IMetacoin"
@@ -1995,7 +2051,7 @@
                         "memberName": "balances",
                         "nodeType": "MemberAccess",
                         "referencedDeclaration": 217,
-                        "src": "639:34:2",
+                        "src": "649:34:2",
                         "typeDescriptions": {
                           "typeIdentifier": "t_function_external_nonpayable$_t_address_$returns$_t_uint256_$",
                           "typeString": "function (address) external returns (uint256)"
@@ -2009,13 +2065,13 @@
                       "lValueRequested": false,
                       "names": [],
                       "nodeType": "FunctionCall",
-                      "src": "639:49:2",
+                      "src": "649:49:2",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
                       }
                     },
-                    "src": "627:61:2",
+                    "src": "637:61:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -2023,7 +2079,7 @@
                   },
                   "id": 168,
                   "nodeType": "ExpressionStatement",
-                  "src": "627:61:2"
+                  "src": "637:61:2"
                 },
                 {
                   "expression": {
@@ -2036,7 +2092,7 @@
                     "nodeType": "UnaryOperation",
                     "operator": "++",
                     "prefix": false,
-                    "src": "692:14:2",
+                    "src": "702:14:2",
                     "subExpression": {
                       "argumentTypes": null,
                       "id": 169,
@@ -2044,7 +2100,7 @@
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
                       "referencedDeclaration": 109,
-                      "src": "692:12:2",
+                      "src": "702:12:2",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
@@ -2057,7 +2113,7 @@
                   },
                   "id": 171,
                   "nodeType": "ExpressionStatement",
-                  "src": "692:14:2"
+                  "src": "702:14:2"
                 }
               ]
             },
@@ -2078,7 +2134,7 @@
                   "name": "coinContractAddress",
                   "nodeType": "VariableDeclaration",
                   "scope": 173,
-                  "src": "325:27:2",
+                  "src": "335:27:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2089,7 +2145,7 @@
                     "id": 110,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "325:7:2",
+                    "src": "335:7:2",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -2105,7 +2161,7 @@
                   "name": "receiver",
                   "nodeType": "VariableDeclaration",
                   "scope": 173,
-                  "src": "354:16:2",
+                  "src": "364:16:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2116,7 +2172,7 @@
                     "id": 112,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "354:7:2",
+                    "src": "364:7:2",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -2132,7 +2188,7 @@
                   "name": "amount",
                   "nodeType": "VariableDeclaration",
                   "scope": 173,
-                  "src": "372:11:2",
+                  "src": "382:11:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2143,7 +2199,7 @@
                     "id": 114,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
-                    "src": "372:4:2",
+                    "src": "382:4:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -2153,26 +2209,26 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "324:60:2"
+              "src": "334:60:2"
             },
             "returnParameters": {
               "id": 117,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "392:0:2"
+              "src": "402:0:2"
             },
             "scope": 174,
-            "src": "307:403:2",
+            "src": "317:403:2",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "public"
           }
         ],
         "scope": 175,
-        "src": "104:608:2"
+        "src": "104:618:2"
       }
     ],
-    "src": "32:680:2"
+    "src": "32:690:2"
   },
   "compiler": {
     "name": "solc",
@@ -2182,12 +2238,12 @@
     "5777": {
       "events": {},
       "links": {},
-      "address": "0xb2b8de4fD7fbA53F279eA1B8844d513dD692c020",
-      "transactionHash": "0x9c5a898c40b6e99902d369b4934acf874fe277076e96f1e0c5ae72eaa34abaf9"
+      "address": "0x960aed5751a976867b774c359F05Fc1A0188A9dE",
+      "transactionHash": "0x4d52fea7d5ad5da6546b9fb561b044fb169ebd94dcc7d5b60cb3dd58f4e39083"
     }
   },
   "schemaVersion": "3.2.4",
-  "updatedAt": "2021-04-11T17:06:40.919Z",
+  "updatedAt": "2021-04-13T00:59:04.492Z",
   "networkType": "ethereum",
   "devdoc": {
     "methods": {}

@@ -3,6 +3,6 @@ const coinCaller = artifacts.require("coinCaller");
 const Metacoin = artifacts.require("Metacoin");
 
 module.exports = function (deployer) {
-  deployer.deploy(Metacoin, 6969);
+  deployer.deploy(coinSpawn);
   deployer.deploy(coinCaller);
 };
